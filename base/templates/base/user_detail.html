@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Bank Account" %}</h1>
+<p>{% trans "Name" %}: {{ object.get_full_name }}</p>
+<p>{% trans "Role" %}: {{ object.get_role_display }}</p>
+<p>{% trans "Balance" %}: {{ object.balance }}</p>
+<p>{% trans "Notes" %}: {{ object.notes }}</p>
+<p><img src="{{ object.picture.medium.url }}"></p>
+
+{% endblock %}

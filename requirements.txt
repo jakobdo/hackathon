@@ -1,0 +1,9 @@
+django
+django-stdimage
+django-crispy-forms
+
+pylint
+pylint-django
+flake8
+
+ipython

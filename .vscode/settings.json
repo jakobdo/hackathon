@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/Users/jakobdamgaardmoller/.pyenv/versions/hack/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+     ],
+}
