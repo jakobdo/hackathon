@@ -16,14 +16,18 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, path
 
-from base.views import IndexView
+from base.views import IndexView, SignupView, LeaderBoardView
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
     path('secure/', include('base.urls')),
+    path('leaderboard/', LeaderBoardView.as_view(), name="leaderboard"),
+    # User auth
     path('login/', LoginView.as_view(), name="login"),
+    path('logout/', LogoutView.as_view(), name="logout"),
+    path('signup/', SignupView.as_view(), name="signup"),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans "Money transfered!" %}</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Leaderboard" %}</h1>
+<ul class="list-group">
+{% for user in object_list %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>
+            {% if forloop.counter < 4 %}
+                <span class="badge badge-success badge-pill">
+            {% else %}
+                <span class="badge badge-light badge-pill">
+            {% endif %}
+            {{ forloop.counter }}</span>
+            {{ user.username|title }}
+        </span>
+        <span class="badge badge-primary badge-pill">{{ user.balance|floatformat:2 }}</span>
+    </li>
+{% empty %}
+    <li class="list-group-item">
+        {% trans "Be the first to get your name up here!" %}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decimal import Decimal
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -125,7 +126,13 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'base.User'
 
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/secure/'
+LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+START_DEPOSIT = Decimal('100.00')
